@@ -13,7 +13,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{grocery.description}}</h5>
                     <p class="card-text">Cantidad restante: {{grocery.quantity}} {{grocery.measurementType}}</p>
-                    <p class="card-text">Fecha Vencimiento: {{grocery.expirationDate}}</p>
+                    <p class="card-text">Fecha Vencimiento: {{grocery.expirationDate | date:'EEEE, MMMM d, y'}}</p>
                     <div class="row">
                         <div class="container col-sm-4">
                             <button class="btn btn-primary btn-block" data-toggle="modal"
