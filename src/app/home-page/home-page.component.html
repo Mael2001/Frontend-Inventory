@@ -1,0 +1,62 @@
+<a class="btn btn-primary btn-block" (click)="agregar()">Agregar Item</a>
+<br>
+<div class="row">
+    <tr *ngFor="let grocery of groceries">
+        <div class="container col-12">
+            <div class="card mb-3">
+                <img src={{grocery.imageURL}} class="card-img-top" alt="...">
+                <div class="card-header">
+                    <h2>
+                        {{grocery.name}}
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{grocery.description}}</h5>
+                    <p class="card-text">Cantidad restante: {{grocery.quantity}} {{grocery.measurementType}}</p>
+                    <p class="card-text">Fecha Vencimiento: {{grocery.expirationDate}}</p>
+                    <div class="row">
+                        <div class="container col-sm-4">
+                            <a class="btn btn-primary btn-block" data-toggle="modal"
+                                data-target="#exampleModal">Reducir Cantidad</a>
+                        </div>
+                        <div class="container col-sm-4">
+                            <a (click)="editar(grocery.id)" class="btn btn-info btn-block">Editar</a>
+                        </div>
+                        <div class="container col-sm-4">
+                            <a (click)="eliminar(grocery)" class="btn btn-danger btn-block">Eliminar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </tr>
+</div>
+<br>
+<a class="btn btn-primary btn-block" (click)="agregar()">Agregar Item</a>
+<br>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Reducir Cantidad</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <label for="cantidad" class="form-label">Por cuanto desea reducirlo</label>
+                <input type="number" class="form-control" id="cantidad" aria-describedby="cantidad">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" >Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').trigger('focus')
+    })
+</script>
