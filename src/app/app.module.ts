@@ -10,13 +10,15 @@ import { GroceryService } from './shared/Services/grocery.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewProductComponent } from './new-product/new-product.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
+import { SearchResultComponent } from './search-result/search-result.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     NewProductComponent,
-    EditProductComponent
+    EditProductComponent,
+    SearchResultComponent
   ],
   imports: [
     BrowserModule,

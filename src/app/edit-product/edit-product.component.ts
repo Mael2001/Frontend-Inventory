@@ -41,16 +41,17 @@ export class EditProductComponent implements OnInit {
     );
 
   }
+  retornar(): void {
+    this.router.navigate(['/home']);
+  }
   enviar(): void {
 
-    var dateControl = (document.querySelector('input[type="date"]') as HTMLInputElement).value;
     var nombre = (document.getElementById("nombre") as HTMLInputElement).value;
     var url = (document.getElementById("url") as HTMLInputElement).value;
     var cantidad = (document.getElementById("cantidad") as HTMLInputElement).value;
     var medida = (document.getElementById("medida") as HTMLInputElement).value;
     var descripcion = (document.getElementById("descripcion") as HTMLInputElement).value;
 
-    console.log("Fecha vencimiento:" + dateControl)
     console.log("Nombre:" + nombre)
     console.log("Url:" + url)
     console.log("Cantidad:" + cantidad)
@@ -58,7 +59,6 @@ export class EditProductComponent implements OnInit {
     console.log("Descripcion:" + descripcion)
 
     this.Grocery.description = descripcion;
-    this.Grocery.expirationDate = new Date(dateControl);
     this.Grocery.imageURL = url;
     this.Grocery.measurementType = medida;
     this.Grocery.name = nombre;

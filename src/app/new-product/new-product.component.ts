@@ -26,6 +26,9 @@ export class NewProductComponent implements OnInit {
   };
   ngOnInit(): void {
   }
+  retornar():void{
+    this.router.navigate(['/home']);
+  }
   enviar(): void {
 
     var dateControl = (document.querySelector('input[type="date"]')as HTMLInputElement).value;
@@ -54,8 +57,10 @@ export class NewProductComponent implements OnInit {
         this.toastr.success("Se ha agregado exitosamente")
         this.router.navigate(['/home']);
       },
-      err => this.toastr.error("Error has ocurred"),
-    )
+      err => {
+        this.toastr.error("Error has ocurred"),
+        console.log(err)
+      })
     console.log(this.Grocery)
   }
 }

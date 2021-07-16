@@ -1,3 +1,5 @@
+<h1>Editando {{Grocery.name}}</h1>
+<hr>
 <form>
     <div class="mb-3">
         <label for="nombre" class="form-label">Nombre</label>
@@ -19,10 +21,7 @@
         <label for="descripcion" class="form-label">Descripcion</label>
         <input type="text" class="form-control" id="descripcion" aria-describedby="descripcion">
     </div>
-    <div class="mb-3">
-        <label for="datepicker" class="form-label">Fecha Vencimiento</label>
-        <br>
-        <input type="date">
-    </div>
-    <p  class="btn btn-primary btn-block" (click)="enviar()">Submit</p>
+    <button  class="btn btn-primary btn-block" (click)="enviar()">Editar</button>
 </form>
+<br>
+<button  class="btn btn-danger btn-block" (click)="retornar()">Cancelar</button>
